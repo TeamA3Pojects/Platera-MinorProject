@@ -657,6 +657,64 @@ footer p.copyright{
     .nav_bar .buttons .signup{
         display: none;
     }
+
+    /* Hero section */
+    .hero_section .hero_content h1{
+        font-size: 35px;
+        margin-bottom: 7px;
+    }
+    .hero_section .search_bar{
+        width: 92%;
+    }
+    #select img#location{
+        margin-right: 2px;
+    }
+    .search_bar input{
+        padding: 10px 2px;
+        font-size: 13px;
+    }
+    .search_bar button{
+        padding: 12.5px 20px;
+    }
+    .body_container{
+        height: 70vh;
+    }
+    .body_cards{
+        height: 60%;
+    }
+    .hero_section .hero_content .search_bar #select{
+        padding: 10px 0px;
+    }
+    /* Card section */
+    .body_container{
+        padding: 20px 0;
+    }
+    .body_cards{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .card{
+        width: 46%;
+        height: 60%;
+    }
+    .card-img{
+        height: 150px;
+    }
+    .card:hover .card-img{
+        transform: scale(1.05);
+    }
+    .card h2 {
+        margin: 0 0 5px;
+        font-size: 17px;
+        font-weight: 500;
+    }
+    .card p {
+        font-size: 12px;
+        color: #555;
+        margin-bottom: 20px;
+        display: none;
+    }
+
     /* Footer section */
     footer{
         bottom: unset;
@@ -666,7 +724,7 @@ footer p.copyright{
     }
     footer .col:nth-child(2), footer .col:nth-child(3){
         flex-basis: 100%;
-    }
+    }  
 }
 
 
