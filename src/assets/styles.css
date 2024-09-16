@@ -692,7 +692,7 @@ footer p.copyright{
         height: 70vh;
     }
     .body_cards{
-        height: 60%;
+        height: 70%;
     }
     .hero_section .hero_content .search_bar #select{
         padding: 10px 0px;
@@ -721,10 +721,14 @@ footer p.copyright{
         font-weight: 500;
     }
     .card p {
-        font-size: 12px;
+        font-size: 5px;
         color: #555;
         margin-bottom: 20px;
         display: none;
+    }
+    .card .card-content .card-btn{
+        font-size: 15px;
+        gap: 5px;
     }
 
     /* Footer section */
