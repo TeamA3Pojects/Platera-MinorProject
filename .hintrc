@@ -17,6 +17,13 @@
           "width: fit-content"
         ]
       }
+    ],
+    "meta-viewport": "off",
+    "axe/forms": [
+      "default",
+      {
+        "label": "off"
+      }
     ]
   }
 }
