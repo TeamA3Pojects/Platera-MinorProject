@@ -556,6 +556,14 @@ footer p.copyright{
     }
 }
 @media(max-width: 767px) and (min-width: 481px){
+    .nav_bar .logo{
+        margin-left: 10px;
+        display: flex;
+        align-items: center;
+    }
+    .nav_bar .logo img{
+        height: 60px;
+    }
     .nav_bar .nav_links .nav_list{
         display: none;  
     }
