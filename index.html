@@ -11,8 +11,6 @@
 <body>
     <!-- Header section -->
 
-    
-
     <header>
         <div class="nav_bar">
             <div class="logo">
@@ -28,7 +26,7 @@
                 </ul>
             </div>
             <div class="buttons">
-                <a href="./src/pages/SignUp_SignIn/SignUp_SignIn.html#signin.form-box.login"><button class="signin">Sign In</button></a>
+                <a href="#"><button class="signin" id="signin">Sign In</button></a>
                 <a href="./src/pages/SignUp_SignIn/SignUp_SignIn.html"><button class="signup">Sign Up</button></a>
             </div>
             <span class="menu" style="color: rgb(255, 255, 255);">
@@ -37,6 +35,61 @@
         </div>
     </header>
 
+    <!-- Sign In PopUp Section -->
+    <section class="popup">
+        <div class="image-cropper">
+            <div class="container"
+                style="background-image: radial-gradient(circle at center, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%), url('src/pages/SignUp_SignIn/Assets/signup1.jpg');">
+                <div class="content">
+                    <h2 class="logo"><img src="../../../Public/images/logo.png" alt=""></h2>
+
+                    <div class="text-sci">
+                        <h2>Welcome!<br><span>To Platera</span></h2>
+
+                        <p>Sign In now to experience our top trending dishes and exclusive offers.</p>
+
+                        <div class="social-icons">
+                            <a href="#"><i class='bx bx-envelope'></i></a>
+                            <a href="#"><i class='bx bxl-instagram'></i></a>
+                            <a href="#"><i class='bx bxl-facebook-circle'></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="logreg-box">
+                    <div class="form-box login" id="signin">
+                        <div class="close-btn"><ion-icon name="close-outline" class="ico"></ion-icon></div>
+                        <form action="#">
+                            <h2>Sign In</h2>
+
+                            <div class="input-box">
+                                <span class="icon"><i class='bx bx-envelope'></i></span>
+                                <input type="email" id="email" required>
+                                <label for="email">Email</label>
+                            </div>
+
+                            <div class="input-box">
+                                <span class="icon"><i class='bx bxs-lock-alt'></i></span>
+                                <input type="password" id="password" required>
+                                <label for="password">Password</label>
+                            </div>
+
+                            <div class="remember-forgot">
+                                <label><input type="checkbox">Remember me</label>
+                                <a href="#">Forgot password?</a>
+                            </div>
+
+                            <button type="submit" class="btn">Sign In</button>
+
+                            <div class="login-register">
+                                <p>Don't have an account? <a href="src/pages/SignUp_SignIn/SignUp_SignIn.html" class="register-link">Sign Up</a></p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Hero Section -->
 
@@ -169,6 +222,14 @@
     <!-- Script Starts Here -->
 
     
+    <!-- All Icon links -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+<script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+
+
+    <!-- Main Script -->
     <script>
 
         let select = document.getElementById("select");
@@ -185,6 +246,16 @@
         })
 
     </script>
+
+    <!-- For signin popup and close -->
+     <script>
+        document.querySelector("#signin").addEventListener("click", function( ) {
+            document.querySelector(".popup" ).classList.add( "active" );
+        });
+        document.querySelector(".form-box .close-btn").addEventListener("click", function( ) {
+            document.querySelector(".popup" ).classList.remove( "active" );
+        });
+     </script>
 
 </body>
 </html>
