@@ -7,9 +7,38 @@
     <title>Sign Up</title>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="SignUp_SignIn.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
+
+    <!-- --------Nav Bar------------------------- -->
+
+    <header>
+        <div class="nav_bar">
+            <div class="logo">
+                <img src="../../../Public/images/logo.png" alt="logo" height="70px" >
+            </div>
+            <div class="nav_links">
+                <ul class="nav_list">
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="">Menu</a></li>
+                    <li><a href="">Restaurants</a></li>
+                    <li><a href="">About Us</a></li>
+                    <li><a href="src/pages/ContactUs/ContactUs.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="buttons">
+                <a href="./src/pages/SignUp_SignIn/SignUp_SignIn.html#signin.form-box.login"><button class="signin">Sign In</button></a>
+                <a href="./src/pages/SignUp_SignIn/SignUp_SignIn.html"><button class="signup">Sign Up</button></a>
+            </div>
+            <span class="menu" style="color: rgb(255, 255, 255);">
+                <i class="fa-solid fa-bars fa-xl"></i>
+            </span>
+        </div>
+    </header>
+
+
     <!------------------ 1st Section ------------>
     <section class="sec1 parallax" id="sec1">
         <div class="left-item">
@@ -137,10 +166,10 @@
             <div class="container"
                 style="background-image: radial-gradient(circle at center, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%), url('image/signup1.jpg');">
                 <div class="content">
-                    <h2 class="logo"><img src="Assets/OF.png" alt=""></h2>
+                    <h2 class="logo"><img src="../../../Public/images/logo.png" alt=""></h2>
 
                     <div class="text-sci">
-                        <h2>Welcome!<br><span>To Only Foods</span></h2>
+                        <h2>Welcome!<br><span>To Platera</span></h2>
 
                         <p>Sign up now to experience our top trending dishes and exclusive offers.</p>
 
@@ -152,7 +181,7 @@
                     </div>
                 </div>
 
-                <div class="logreg-box">
+                <div class="logreg-box">font-family: 'Outfit', sans-serif;
                     <div class="form-box login" id="signin">
                         <form action="#">
                             <h2>Sign In</h2>
