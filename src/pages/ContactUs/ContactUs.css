@@ -47,7 +47,7 @@ body.dark{
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	animation: fade 4s;
+	animation: fade 5s;
 	animation-fill-mode: forwards;
 }
 
