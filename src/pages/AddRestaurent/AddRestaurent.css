@@ -73,7 +73,7 @@ body{
 }
 
 /*****************Signup/SignIn Popup*******************  */
-.popup.Signup-popup, .popup.Signin-popup {
+.popup.Signup-popup, .popup#Signin-popup {
     position: fixed;
     z-index: 10000;
     display: flex;
@@ -90,7 +90,7 @@ body{
 }
 
 /* When activated, the popups become visible and scale up */
-.Signup-popup.activate, .Signin-popup.activate {
+.Signup-popup.activate, #Signin-popup.activate {
     visibility: visible;
     transform: scale(1);
 }
@@ -102,7 +102,7 @@ body{
 }
 
 /* Ensure that the Signin-popup hides when not active */
-.Signin-popup {
+#Signin-popup {
     visibility: hidden;
     transform: scale(0);
 }
