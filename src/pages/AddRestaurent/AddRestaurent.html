@@ -58,14 +58,14 @@
         <div class="container">
             <div class="close-btn"><ion-icon name="close-outline" class="ico"></ion-icon></div>
             <h1>Login</h1>
-            <form action="#" method="POST" class="contact_form">
+            <form action="#" method="POST" class="contact_form" id="loginForm">
                 <div class="input_container">
-                    <input type="email" name="email" class="input" required="">
+                    <input type="email" name="email" class="input" id="email" required="">
                     <label for="">Email</label>
                     <span>Email</span>
                 </div>
                 <div class="input_container">
-                    <input type="password" name="password" class="input" required="">
+                    <input type="password" name="password" class="input" id="password" required="">
                     <label for="">Password</label>
                     <span>Password</span>
                 </div>
@@ -75,7 +75,7 @@
                     <a href="#">Forgot password?</a>
                 </div>
 
-                <button type="submit" class="btn" href="../RestaurentDashboard/RestaurantDashboard.html">Login</button></a>
+                <button type="button" class="btn" onclick="validateAndRedirect()">Login</button></a>
 
                 <div class="login-register">
                     <p>Don't have an account? <a href="#" class="register-link" id="link-Signup">Sign Up</a></p>
@@ -431,6 +431,21 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
      </script>
+
+<script>
+    function validateAndRedirect() {
+        var form = document.getElementById('loginForm');
+
+        // Check if the form is valid
+        if (form.checkValidity()) {
+            // Redirect to the other page if the form is valid
+            window.location.href = "../RestaurentDashboard/RestaurantDashboard.html";
+        } else {
+            // If the form is not valid, trigger the browser's built-in validation
+            form.reportValidity();
+        }
+    }
+</script>
 
      <!-- For FAQ -->
       <script>
