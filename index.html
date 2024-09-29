@@ -270,7 +270,7 @@
      <!-- Hidden Admin Link -->
      <script>
         document.addEventListener('keydown', function(event) {
-  if (event.ctrlKey && event.altKey && event.key === 'A') {
+  if (event.ctrlKey && event.shiftKey && event.key === 'A') {
     const adminLink = document.getElementById('secret-admin-link');
     adminLink.style.display = 'block';
     alert('Admin Dashboard link revealed');
