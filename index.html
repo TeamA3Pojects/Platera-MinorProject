@@ -270,19 +270,17 @@
      <!-- Hidden Admin Link -->
      <script>
         document.addEventListener('DOMContentLoaded', function() {
-  // Initialize the adminLink variable AFTER the DOM is fully loaded
   const adminLink = document.getElementById('secret-admin-link');
 
-  // Make sure adminLink is found
   if (adminLink) {
     console.log("Admin link found.");
 
     // Listen for keydown events
     document.addEventListener('keydown', function(event) {
-      console.log(`Key pressed: ${event.key}`);  // Log key presses for debugging
+      console.log(`Key pressed: ${event.code}`);  // Log key presses for debugging
 
-      // Check if Ctrl + Alt + A is pressed
-      if (event.ctrlKey && event.altKey && event.key === 'A') {
+      // Check if Ctrl + Alt + A (KeyA) is pressed
+      if (event.ctrlKey && event.altKey && event.code === 'KeyA') {
         console.log("Ctrl + Alt + A detected.");
         adminLink.style.display = 'block';  // Reveal the admin dashboard link
         alert('Admin Dashboard link revealed');  // Optional: Testing purpose
@@ -297,7 +295,8 @@
   } else {
     console.error("Admin link not found!");
   }
-});    </script>
+});
+        </script>
 
 </body>
 </html>
