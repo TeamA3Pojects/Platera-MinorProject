@@ -21,51 +21,89 @@
 
     <!-- Signup Popup -->
     <section class="popup Signup-popup">
-            <div class="container">
-                <div class="close-btn"><ion-icon name="close-outline" class="ico"></ion-icon></div>
-                <h1>Signup</h1>
-                <form action="#" method="POST" class="contact_form">
-                    <div class="input_container">
-                        <input type="text" name="name" class="input" required="">
-                        <label for="first_name" name="first_name">Username</label>
-                        <span>Username</span>
-                    </div>
-                    <div class="input_container">
-                        <input type="email" name="email" class="input" required="">
-                        <label for="">Email</label>
-                        <span>Email</span>
-                    </div>
-                    <div class="input_container">
-                        <input type="password" name="password" class="input" required="">
-                        <label for="">Password</label>
-                        <span>Password</span>
-                    </div>
-                    <div class="remember-forgot">
-                        <label><input type="checkbox">I agree to Platera's <b><span style="color: red;">Terms of Service</span></b> & <b><span style="color: red;">Conditions</span></b></label>
-                    </div>
+        <div class="container">
+            <div class="close-btn"><ion-icon name="close-outline" class="ico"></ion-icon></div>
+            <h1>Restaurant Registration</h1>
+            <form action="#" method="POST" id="restaurantRegistrationForm" class="contact_form" enctype="multipart/form-data">
+                <div class="input_container">
+                    <input type="text" name="restaurant_name" class="input" required>
+                    <label for="restaurant_name">Restaurant Name</label>
+                    <span>Restaurant Name</span>
+                </div>
+                <div class="input_container">
+                    <input type="text" name="owner_name" class="input" required>
+                    <label for="owner_name">Owner Name</label>
+                    <span>Owner Name</span>
+                </div>
+                <div class="input_container">
+                    <input type="email" name="email" class="input" required>
+                    <label for="email">Email</label>
+                    <span>Email</span>
+                </div>
+                <div class="input_container">
+                    <input type="text" name="phone" class="input" required>
+                    <label for="phone">Phone Number</label>
+                    <span>Phone Number</span>
+                </div>
+                <div class="input_container">
+                    <input type="text" name="bank_account_name" class="input" required>
+                    <label for="bank_account_name">Bank Account Name</label>
+                    <span>Bank Account Name</span>
+                </div>
+                <div class="input_container">
+                    <input type="text" name="bank_account_number" class="input" required>
+                    <label for="bank_account_number">Bank Account Number</label>
+                    <span>Bank Account Number</span>
+                </div>
+                <div class="input_container">
+                    <input type="text" name="gstin" class="input" required>
+                    <label for="gstin">Regular GSTIN Number</label>
+                    <span>Regular GSTIN Number</span>
+                </div>
+                <div class="input_container">
+                    <input type="file" name="restaurant_menu_image" class="input" required>
+                    <label for="restaurant_menu_image">Upload Restaurant Menu Image</label>
+                    <span>Restaurant Menu Image</span>
+                </div>
+                <div class="input_container">
+                    <input type="file" name="fssai_license_image" class="input" required>
+                    <label for="fssai_license_image">Upload FSSAI License Image</label>
+                    <span>FSSAI License Image</span>
+                </div>
+                <div class="input_container">
+                    <input type="file" name="pan_card_image" class="input" required>
+                    <label for="pan_card_image">Upload PAN Card Image</label>
+                    <span>PAN Card Image</span>
+                </div>
+                <div class="input_container">
+                    <input type="password" name="password" class="input" required>
+                    <label for="password">Password</label>
+                    <span>Password</span>
+                </div>
+                <div class="remember-forgot">
+                    <label><input type="checkbox" required>I agree to Platera's <b><span style="color: red;">Terms of Service</span></b> & <b><span style="color: red;">Conditions</span></b></label>
+                </div>
+    
+                <button type="submit" class="btn">Register Restaurant</button>
 
-                    <button type="submit" class="btn">Create an account</button>
-
-                    <div class="login-register">
-                        <p>Already have an account? <a href="#" class="login-link" id="link-Signin">Sign in</a></p>
-                    </div>
-                </form>
-            </div>
+            </form>
+        </div>
     </section>
+    
 
     <!-- Signin Popup -->
     <section class="popup" id="Signin-popup">
-        <div class="container">
+        <div class="container1">
             <div class="close-btn"><ion-icon name="close-outline" class="ico"></ion-icon></div>
             <h1>Login</h1>
             <form action="#" method="POST" class="contact_form" id="loginForm">
                 <div class="input_container">
-                    <input type="email" name="email" class="input" id="email" required="">
+                    <input type="email" name="email" class="input" id="emailInput" required="">
                     <label for="">Email</label>
                     <span>Email</span>
                 </div>
                 <div class="input_container">
-                    <input type="password" name="password" class="input" id="password" required="">
+                    <input type="password" name="password" class="input" id="passwordInput" required="">
                     <label for="">Password</label>
                     <span>Password</span>
                 </div>
@@ -401,15 +439,10 @@ document.querySelector("#login").addEventListener("click", function() {
     document.querySelector("#Signin-popup").classList.add("activate");
 });
 
-document.querySelector("#Signin-popup .container .close-btn").addEventListener("click", function() {
+document.querySelector("#Signin-popup .container1 .close-btn").addEventListener("click", function() {
     document.querySelector("#Signin-popup").classList.remove("activate");
 });
 
-// Link to open Signin-popup and close Signup-popup
-document.querySelector("#link-Signin").addEventListener("click", function() {
-    document.querySelector(".Signup-popup").classList.remove("activate"); // Hide Signup popup
-    document.querySelector("#Signin-popup").classList.add("activate"); // Show Signin popup
-});
 
 // Link to open Signup-popup and close Signin-popup
 document.querySelector("#link-Signup").addEventListener("click", function() {
@@ -434,17 +467,113 @@ document.addEventListener('DOMContentLoaded', function() {
 
 <script>
     function validateAndRedirect() {
-        var form = document.getElementById('loginForm');
+    var form = document.getElementById('loginForm');
+    var emailInput = document.getElementById('emailInput').value; // Assuming this is your email input ID
+    var passwordInput = document.getElementById('passwordInput').value; // Assuming this is your password input ID
 
-        // Check if the form is valid
-        if (form.checkValidity()) {
-            // Redirect to the other page if the form is valid
+    // Check if the form is valid
+    if (form.checkValidity()) {
+        // Retrieve stored credentials
+        var storedEmail = localStorage.getItem('restaurantEmail');
+        var storedPassword = localStorage.getItem('restaurantPassword');
+
+        // Validate the email and password
+        if (emailInput === storedEmail && passwordInput === storedPassword) {
+            // Redirect to the restaurant dashboard if valid
             window.location.href = "../RestaurentDashboard/RestaurantDashboard.html";
         } else {
-            // If the form is not valid, trigger the browser's built-in validation
-            form.reportValidity();
+            alert('Invalid email or password. Please try again.');
         }
+    } else {
+        // If the form is not valid, trigger the browser's built-in validation
+        form.reportValidity();
     }
+}
+
+    document.getElementById('restaurantRegistrationForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent form submission
+
+    // Get values from the form inputs
+    const restaurantName = this.restaurant_name.value;
+    const ownerName = this.owner_name.value;
+    const email = this.email.value;
+    const phone = this.phone.value;
+    const bankAccountName = this.bank_account_name.value;
+    const bankAccountNumber = this.bank_account_number.value;
+    const gstin = this.gstin.value;
+
+    // Function to convert file to Base64
+    const toBase64 = (file) => new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = () => resolve(reader.result);
+        reader.onerror = reject;
+        reader.readAsDataURL(file);
+    });
+
+    // Store images as Base64 strings
+    Promise.all([
+        toBase64(this.restaurant_menu_image.files[0]),
+        toBase64(this.fssai_license_image.files[0]),
+        toBase64(this.pan_card_image.files[0])
+    ]).then(images => {
+        // Store the password along with other details in the restaurant object
+const restaurant = {
+    restaurant_name: restaurantName,
+    owner_name: ownerName,
+    email: email,
+    phone: phone,
+    bank_account_name: bankAccountName,
+    bank_account_number: bankAccountNumber,
+    gstin: gstin,
+    password: this.password.value, // Add this line to store the password
+    restaurant_menu_image: images[0],
+    fssai_license_image: images[1],
+    pan_card_image: images[2]
+};
+
+
+        // Retrieve existing restaurants from localStorage
+        const pendingRestaurants = JSON.parse(localStorage.getItem('pendingRestaurants')) || [];
+        pendingRestaurants.push(restaurant);
+        localStorage.setItem('pendingRestaurants', JSON.stringify(pendingRestaurants));
+
+        // Optional: Clear the form after submission
+        this.reset();
+        alert('Restaurant registered successfully!');
+    }).catch(error => {
+        console.error('Error uploading images:', error);
+    });
+});
+
+
+// Function to populate the restaurant table
+function populateRestaurantTable() {
+    const pendingRestaurantsTable = document.getElementById('pendingRestaurantsTable');
+    pendingRestaurantsTable.innerHTML = ''; // Clear existing entries
+
+    const pendingRestaurants = JSON.parse(localStorage.getItem('pendingRestaurants')) || [];
+
+    // Populate the table
+    pendingRestaurants.forEach((restaurant, index) => {
+        const row = `
+            <tr onclick="showPopup(${index})">
+                <td>${restaurant.restaurant_name}</td>
+                <td>${restaurant.owner_name}</td>
+                <td>${restaurant.email}</td>
+                <td>${restaurant.phone}</td>
+                <td>
+                    <button class="btn-approve" onclick="approveRestaurant(${index}); event.stopPropagation();">Approve</button>
+                    <button class="btn-reject" onclick="rejectRestaurant(${index}); event.stopPropagation();">Reject</button>
+                </td>
+            </tr>
+        `;
+        pendingRestaurantsTable.innerHTML += row;
+    });
+}
+
+// Call this function to populate the table on page load
+populateRestaurantTable();
+
 </script>
 
      <!-- For FAQ -->

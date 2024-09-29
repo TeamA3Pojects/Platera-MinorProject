@@ -6,7 +6,7 @@
     <title>Homepage</title>
     <link rel="stylesheet" href="./src/assets/styles.css">
     <link rel="shortcut icon" href="./Public/fabicon.png" type="image/x-icon">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
 </head>
 <body>
 
@@ -23,7 +23,7 @@
     <header>
         <div class="nav_bar">
             <div class="logo">
-                <img src="./Public/images/logo.png" alt="logo" height="70px" >
+                <img src="./Public/images/logo.png" alt="logo" height="70px">
             </div>
             <div class="nav_links">
                 <ul class="nav_list">
@@ -32,6 +32,7 @@
                     <li><a href="src/pages/AddRestaurent/AddRestaurent.html">Add Restaurant</a></li>
                     <li><a href="src/pages/Delivery Executive/DeliveryDashboard.html">Delivery Executive</a></li>
                     <li><a href="src/pages/ContactUs/ContactUs.html">Contact Us</a></li>
+                    <li><a href="src/pages/Admin/Admin_Order_Management.html" id="secret-admin-link">Admin Dashboard</a></li>
                 </ul>
             </div>
             <div class="buttons">
@@ -265,6 +266,22 @@
             document.querySelector(".popup" ).classList.remove( "active" );
         });
      </script>
+
+     <!-- Hidden Admin Link -->
+     <script>
+        document.addEventListener('keydown', function(event) {
+  if (event.ctrlKey && event.altKey && event.key === 'A') {
+    const adminLink = document.getElementById('secret-admin-link');
+    adminLink.style.display = 'block';
+    alert('Admin Dashboard link revealed');
+  }
+});
+        adminLink.addEventListener('click', function() {
+  adminLink.style.display = 'none'; // Hide again after clicking
+});
+
+        </script>
+        
 
 </body>
 </html>

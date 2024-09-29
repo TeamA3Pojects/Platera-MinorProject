@@ -84,7 +84,6 @@ body{
     background-size: cover;
     height: 100vh;
     width: 100%;
-    transform: scale(0);
     visibility: hidden;
     transition: 0.3s ease;
 }
@@ -92,26 +91,26 @@ body{
 /* When activated, the popups become visible and scale up */
 .Signup-popup.activate, #Signin-popup.activate {
     visibility: visible;
-    transform: scale(1);
 }
 
 /* Ensure that the Signup-popup hides when not active */
 .Signup-popup {
     visibility: hidden;
-    transform: scale(0);
+    z-index: 10000 !important;
 }
 
 /* Ensure that the Signin-popup hides when not active */
 #Signin-popup {
     visibility: hidden;
-    transform: scale(0);
+    z-index: 9000 !important;
 }
 
-.popup .container {
+/* ------------------login-------------------- */
+.popup .container1 {
     position: relative;
     background-color: #f1f7f5;
     width: 450px;
-    height: 65vh;
+    height: 55vh;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -119,7 +118,7 @@ body{
     padding: 25px;
 }
 
-.container .close-btn{
+.container1 .close-btn{
     position: absolute;
     top: 15px;
     right: 20px;
@@ -127,26 +126,31 @@ body{
     width: 40px;
     cursor: pointer;
 }
-.container .close-btn .ico{
+.container1 .close-btn .ico{
     height: 100%;
     width: 100%;
 }
-.popup .container h1{
+.popup .container1 h1{
     font-size: 2rem;
     font-weight: 550;
     color: rgb(87, 87, 87);
 }
-.contact_form{
+.container1 .contact_form{
     width: 100%;
     margin-top: 30px;
 }
-.input_container{
+
+.container1 .contact_form p{
+    margin-top: 20px;
+}
+
+.container1 .input_container{
     position: relative;
     margin-top: .1rem;
     margin-bottom: 1.9rem;
     width: 100%;
 }
-.input{
+.container1 .input{
     width: 100%;
     height: 50px;
     border: 2px solid rgb(207, 207, 207);
@@ -162,11 +166,11 @@ body{
   position: relative;
   z-index: 3;
 }
-.input:focus{
+.container1 .input:focus{
     border-color: rgb(0, 153, 153);
 }
 
-.input_container label{
+.container1 .input_container label{
     position: absolute;
     top: 50%;
     left: 1rem;
@@ -182,7 +186,7 @@ body{
 }
 
 
-.input_container span{
+.container1 .input_container span{
     position: absolute;
     top: 0;
     left: 25px;
@@ -195,8 +199,8 @@ body{
     display: block;
 }
 
-.input_container span::before,
-.input_container span::after{
+.container1 .input_container span::before,
+.container1 .input_container span::after{
     content: '';
     position: absolute;
     width: 100%;
@@ -208,19 +212,19 @@ body{
     transition: .3s;
     z-index: 5;
 }
-.input_container.focus span::before,
-.input_container.focus span::after{
+.container1 .input_container.focus span::before,
+.container1 .input_container.focus span::after{
     width: 50%;
     opacity: 1;
 }
-.input_container span::before{
+.container1 .input_container span::before{
     left: 50%;
 }
-.input_container span::after{
+.container1 .input_container span::after{
     right: 50%;
 }
 
-.input_container.focus label{
+.container1 .input_container.focus label{
     top: 0;
     transform: translateY(-50%);
     left: 25px;
@@ -228,7 +232,7 @@ body{
     color: rgb(0, 153, 153);
 }
 
-.remember-forgot{
+.container1 .remember-forgot{
     font-size: 14.5px;
     font-weight: 500;
     margin: -15px 0 15px;
@@ -236,23 +240,23 @@ body{
     justify-content: space-between;
 }
 
-.remember-forgot label input{
+.container1 .remember-forgot label input{
     margin-right: 4px;
     width: auto;
 }
-.remember-forgot label{
+.container1 .remember-forgot label{
     font-weight: 400;
 }
-.remember-forgot a{
+.container1 .remember-forgot a{
     color: rgb(232, 4, 4);
     text-decoration: none;
 }
 
-.remember-forgot a:hover{
+.container1 .remember-forgot a:hover{
     text-decoration: underline;
 }
 
-.btn{
+.container1 .btn{
     width: 100%;
     height: 50px;
     background: #c4103d;
@@ -266,34 +270,179 @@ body{
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
-.btn:hover{
+.container1 .btn:hover{
     background: #f7134c;
     transform: scale(1.05);
 }
 
-.btn:active{
+.container1 .btn:active{
     background-color: #c4103d;
     transform: scale(0.98);
 }
 
-.login-register{
-    font-size: 14.5px;
-    text-align: center;
-    font-weight: 500;
-    margin-top: 25px;
-    font-size: 20px;
-    font-weight: 300;
-}
-
-.login-register p a{
+.container1 .login-register p a{
     color: rgb(232, 4, 4);
     font-weight: 600;
     text-decoration: none;
 }
 
-.login-register p a:hover{
+.container1 .login-register p a:hover{
     text-decoration: underline;
 }
+
+/* --------------------register--------------------------- */
+
+.popup .container {
+    position: relative;
+    background-color: #f1f7f5;
+    width: 1150px; /* Increased width to fit 3 columns */
+    height: auto; /* Adjust for dynamic content */
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 10px;
+    padding: 25px;
+}
+
+.container .close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+}
+
+.container .close-btn .ico {
+    height: 100%;
+    width: 100%;
+}
+
+.popup .container h1 {
+    font-size: 2rem;
+    font-weight: 550;
+    color: rgb(87, 87, 87);
+}
+
+.container .contact_form {
+    width: 100%;
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    gap: 20px; /* Spacing between columns */
+}
+
+.container .input_container {
+    position: relative;
+    margin-bottom: 1.5rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.container .input {
+    width: 100%;
+    height: 50px;
+    border: 2px solid rgb(207, 207, 207);
+    background-color: transparent;
+    padding: 0.6rem 1.2rem;
+    color: rgb(105, 105, 105);
+    font-weight: 400;
+    font-size: 1.3rem;
+    letter-spacing: 0.5px;
+    outline: none;
+    border-radius: 0.5rem;
+    transition: 0.3s;
+    position: relative;
+    z-index: 3;
+}
+
+/* Styling for labels */
+.container .input_container label {
+    position: absolute;
+    top: 50%;
+    left: 1rem;
+    transform: translateY(-50%);
+    padding: 0 0.4rem;
+    color: rgb(197, 197, 197);
+    font-size: 1rem;
+    font-weight: 300;
+    pointer-events: none;
+    z-index: 1000;
+    transition: 0.5s;
+    display: block;
+}
+
+.container .input:focus + label,
+.container .input:valid + label {
+    top: 0;
+    transform: translateY(-150%); /* Moves label above input */
+    font-size: 0.9rem;
+    color: rgb(0, 153, 153);
+}
+
+/* Special case for file inputs */
+.container .input_container input[type="file"] + label {
+    top: -25px; /* Moves the label above the input */
+    transform: none; /* No translate for file inputs */
+    left: 0;
+    font-size: 1rem;
+}
+
+/* Adjust the span as well for file inputs */
+.container .input_container input[type="file"] + label + span {
+    display: none; /* We don't need the span for file inputs */
+}
+
+/* Extra spans for decoration (hidden for file inputs) */
+.container .input_container span {
+    display: none;
+}
+
+/* General styling for submit button */
+.container .btn {
+    width: 100%;
+    height: 50px;
+    background: #c4103d;
+    outline: none;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 20px;
+    color: #e4e4e4;
+    font-weight: 500;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    grid-column: 1 / -1; /* Full width button spanning all columns */
+}
+
+.container .btn:hover {
+    background: #f7134c;
+    transform: scale(1.03);
+}
+
+.container .btn:active {
+    background-color: #c4103d;
+    transform: scale(0.98);
+}
+
+/* Checkbox styling */
+.container .remember-forgot {
+    grid-column: 1 / -1; /* Spanning across all columns */
+    font-size: 14.5px;
+    font-weight: 500;
+    margin: -15px 0 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.container .remember-forgot label {
+    width: 100%;
+}
+
+.container .remember-forgot label input {
+    width: auto;
+}
+
 
 
 
