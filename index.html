@@ -270,29 +270,34 @@
      <!-- Hidden Admin Link -->
      <script>
         document.addEventListener('DOMContentLoaded', function() {
+  // Initialize the adminLink variable AFTER the DOM is fully loaded
   const adminLink = document.getElementById('secret-admin-link');
-  
-  // Log a message to confirm the page loaded and the script is running
-  console.log("Page loaded and script running.");
 
-  // Listen for keydown events
-  document.addEventListener('keydown', function(event) {
-    // Check if Ctrl + Alt + A is pressed
-    console.log(`Key pressed: ${event.key}`); // Log every key press to ensure the event is detected
-    if (event.ctrlKey && event.altKey && event.key === 'A') {
-      console.log("Ctrl + Alt + A detected.");
-      adminLink.style.display = 'block';  // Reveal the admin dashboard link
-      alert('Admin Dashboard link revealed'); // Optional: Remove later, added for testing
-    }
-  });
-  
-  // Hide the link again after it's clicked
-  adminLink.addEventListener('click', function() {
-    console.log("Admin link clicked, hiding it.");
-    adminLink.style.display = 'none'; // Hide again after clicking
-  });
-});
-        </script>
+  // Make sure adminLink is found
+  if (adminLink) {
+    console.log("Admin link found.");
+
+    // Listen for keydown events
+    document.addEventListener('keydown', function(event) {
+      console.log(`Key pressed: ${event.key}`);  // Log key presses for debugging
+
+      // Check if Ctrl + Alt + A is pressed
+      if (event.ctrlKey && event.altKey && event.key === 'A') {
+        console.log("Ctrl + Alt + A detected.");
+        adminLink.style.display = 'block';  // Reveal the admin dashboard link
+        alert('Admin Dashboard link revealed');  // Optional: Testing purpose
+      }
+    });
+
+    // Hide the link again after it's clicked
+    adminLink.addEventListener('click', function() {
+      console.log("Admin link clicked, hiding it.");
+      adminLink.style.display = 'none';  // Hide again after clicking
+    });
+  } else {
+    console.error("Admin link not found!");
+  }
+});    </script>
 
 </body>
 </html>
