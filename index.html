@@ -32,7 +32,7 @@
                     <li><a href="src/pages/AddRestaurent/AddRestaurent.html">Add Restaurant</a></li>
                     <li><a href="src/pages/Delivery Executive/DeliveryDashboard.html">Delivery Executive</a></li>
                     <li><a href="src/pages/ContactUs/ContactUs.html">Contact Us</a></li>
-                    <li><a href="src/pages/Admin/Admin_Order_Management.html" id="secret-admin-link">Admin Dashboard</a></li>
+                    <li><a href="src/pages/Admin/Admin_Order_Management.html" id="secret-admin-link" style="display: none;">Admin Dashboard</a></li>
                 </ul>
             </div>
             <div class="buttons">
@@ -269,19 +269,30 @@
 
      <!-- Hidden Admin Link -->
      <script>
-        document.addEventListener('keydown', function(event) {
-  if (event.ctrlKey && event.shiftKey && event.key === 'A') {
-    const adminLink = document.getElementById('secret-admin-link');
-    adminLink.style.display = 'block';
-    alert('Admin Dashboard link revealed');
-  }
-});
-        adminLink.addEventListener('click', function() {
-  adminLink.style.display = 'none'; // Hide again after clicking
-});
+        document.addEventListener('DOMContentLoaded', function() {
+  const adminLink = document.getElementById('secret-admin-link');
+  
+  // Log a message to confirm the page loaded and the script is running
+  console.log("Page loaded and script running.");
 
+  // Listen for keydown events
+  document.addEventListener('keydown', function(event) {
+    // Check if Ctrl + Alt + A is pressed
+    console.log(`Key pressed: ${event.key}`); // Log every key press to ensure the event is detected
+    if (event.ctrlKey && event.altKey && event.key === 'A') {
+      console.log("Ctrl + Alt + A detected.");
+      adminLink.style.display = 'block';  // Reveal the admin dashboard link
+      alert('Admin Dashboard link revealed'); // Optional: Remove later, added for testing
+    }
+  });
+  
+  // Hide the link again after it's clicked
+  adminLink.addEventListener('click', function() {
+    console.log("Admin link clicked, hiding it.");
+    adminLink.style.display = 'none'; // Hide again after clicking
+  });
+});
         </script>
-        
 
 </body>
 </html>
